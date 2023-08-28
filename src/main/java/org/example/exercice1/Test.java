@@ -74,6 +74,7 @@ public class Test {
 
 //********************** supprimer  produit id  *************************************
         session.delete(3);
+        session.getTransaction().commit();
 
 //********************** modifier  produit id 1 *************************************
 
@@ -81,6 +82,8 @@ public class Test {
         session.update(product1);
         System.out.println(product1.getId());
 
+        session.close();
+        sessionFactory.close();
 
     }
 
